@@ -39,9 +39,14 @@ plugins/my-toolkit/
 ## 작업 흐름
 
 1. `plugins/my-toolkit/skills/<새-스킬>/SKILL.md` 추가 또는 수정
-2. `claude plugin validate .` 로 검증
-3. 커밋 후 push
-4. Claude Code에서 `/plugin marketplace update namyoungjun-plugins` 실행 (설치된 플러그인은 캐시에 복사되므로 이 단계가 필요)
+2. `plugins/my-toolkit/.claude-plugin/plugin.json`의 `version` 올리기 (예: 0.1.0 → 0.1.1)
+   - 설치된 플러그인은 버전별로 캐시되므로, 버전이 그대로면 수정 내용이 반영되지 않을 수 있음
+   - 버전은 `plugin.json` 한 곳에서만 관리 (`marketplace.json`에는 적지 않음)
+3. `claude plugin validate .` 로 검증
+4. 커밋 후 push
+5. 반영
+   - 자동 업데이트 ON: Claude Code 재시작만 하면 됨 (`/plugin` → Marketplaces → namyoungjun-plugins → Enable auto-update)
+   - 자동 업데이트 OFF: `/plugin marketplace update namyoungjun-plugins` 실행
 
 ## 라이선스
 
