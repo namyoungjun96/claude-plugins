@@ -1,0 +1,11 @@
+{
+  "name": "my-toolkit",
+  "version": "0.1.0",
+  "description": "직접 만든 스킬과 슬래시 커맨드 모음",
+  "author": {
+    "name": "namyoungjun96",
+    "url": "https://github.com/namyoungjun96"
+  },
+  "repository": "https://github.com/namyoungjun96/claude-plugins",
+  "license": "MIT"
+}

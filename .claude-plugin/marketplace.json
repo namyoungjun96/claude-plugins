@@ -1,0 +1,30 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "namyoungjun-plugins",
+  "owner": {
+    "name": "namyoungjun96",
+    "url": "https://github.com/namyoungjun96"
+  },
+  "metadata": {
+    "description": "namyoungjun96의 개인 Claude Code 플러그인 모음",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "my-toolkit",
+      "source": "./plugins/my-toolkit",
+      "description": "직접 만든 스킬과 슬래시 커맨드 모음",
+      "version": "0.1.0",
+      "category": "productivity"
+    },
+    {
+      "name": "superpowers",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/obra/superpowers.git"
+      },
+      "description": "[외부 링크] obra/superpowers - TDD, 디버깅, 브레인스토밍 워크플로. 파일은 복사하지 않고 원본 저장소를 가리킴",
+      "category": "external"
+    }
+  ]
+}
