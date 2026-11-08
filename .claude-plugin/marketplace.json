@@ -24,6 +24,18 @@
       },
       "description": "[외부 링크] obra/superpowers - TDD, 디버깅, 브레인스토밍 워크플로. 파일은 복사하지 않고 원본 저장소를 가리킴",
       "category": "external"
+    },
+    {
+      "name": "archify",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/tt-a1i/archify.git",
+        "ref": "main"
+      },
+      "strict": false,
+      "skills": ["./archify"],
+      "description": "[외부 링크] tt-a1i/archify - 아키텍처, 플로우, ERD 등 다이어그램을 HTML로 생성. 원본이 플러그인 형태가 아니라서 strict: false로 하위 폴더의 스킬을 지정",
+      "category": "external"
     }
   ]
 }

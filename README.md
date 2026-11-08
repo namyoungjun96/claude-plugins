@@ -22,6 +22,7 @@ namyoungjun96의 개인 [Claude Code](https://claude.com/claude-code) 플러그�
 |---|---|---|
 | `my-toolkit` | 직접 제작 | 개인 스킬과 커맨드 (`plugins/my-toolkit`) |
 | `superpowers` | 외부 링크 | [obra/superpowers](https://github.com/obra/superpowers). 파일을 복사하지 않고 원본 저장소를 가리킴 |
+| `archify` | 외부 링크 | [tt-a1i/archify](https://github.com/tt-a1i/archify). 다이어그램 생성 스킬. 원본에 `plugin.json`이 없어 `strict: false`로 `archify/` 폴더를 스킬로 지정 |
 
 > 외부 링크 플러그인은 "내가 쓰는 플러그인 목록"을 관리하려고 넣은 것입니다. 이미 원래 마켓플레이스에서
 > 설치했다면 중복이므로 여기서 다시 설치하지 않아도 됩니다.
