@@ -14,7 +14,6 @@
       "name": "my-toolkit",
       "source": "./plugins/my-toolkit",
       "description": "직접 만든 스킬과 슬래시 커맨드 모음",
-      "version": "0.1.0",
       "category": "productivity"
     },
     {
