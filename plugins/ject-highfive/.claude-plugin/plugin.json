@@ -1,0 +1,11 @@
+{
+  "name": "ject-highfive",
+  "version": "0.1.0",
+  "description": "참여 중인 팀 프로젝트(highfive 백엔드) 전용 스킬. 해당 레포에만 프로젝트 범위로 설치해서 쓴다",
+  "author": {
+    "name": "namyoungjun96",
+    "url": "https://github.com/namyoungjun96"
+  },
+  "repository": "https://github.com/namyoungjun96/claude-plugins",
+  "license": "MIT"
+}

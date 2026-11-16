@@ -21,6 +21,7 @@ namyoungjun96의 개인 [Claude Code](https://claude.com/claude-code) 플러그�
 | 플러그인 | 종류 | 설명 |
 |---|---|---|
 | `my-toolkit` | 직접 제작 | 개인 스킬과 커맨드 (`plugins/my-toolkit`) |
+| `ject-highfive` | 직접 제작 | 팀 프로젝트 전용 스킬 (`plugins/ject-highfive`). PR 전 개인 코드 리뷰. 해당 레포에만 `--scope project`로 설치 |
 | `superpowers` | 외부 링크 | [obra/superpowers](https://github.com/obra/superpowers). 파일을 복사하지 않고 원본 저장소를 가리킴 |
 | `archify` | 외부 링크 | [tt-a1i/archify](https://github.com/tt-a1i/archify). 다이어그램 생성 스킬. 원본에 `plugin.json`이 없어 `strict: false`로 `archify/` 폴더를 스킬로 지정 |
 

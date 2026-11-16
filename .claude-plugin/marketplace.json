@@ -17,6 +17,12 @@
       "category": "productivity"
     },
     {
+      "name": "ject-highfive",
+      "source": "./plugins/ject-highfive",
+      "description": "참여 중인 팀 프로젝트(highfive 백엔드) 전용 스킬. 해당 레포에만 프로젝트 범위로 설치",
+      "category": "productivity"
+    },
+    {
       "name": "superpowers",
       "source": {
         "source": "url",
