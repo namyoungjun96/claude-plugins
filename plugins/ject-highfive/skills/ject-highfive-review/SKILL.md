@@ -1,6 +1,6 @@
 ---
 name: ject-highfive-review
-description: highfive 백엔드 레포(com.ject.highfive)에서 사용자가 PR을 올리기 전에 자기 변경 사항을 리뷰해 달라고 할 때 사용. "리뷰해줘", "PR 전에 봐줘", "/ject-highfive:ject-highfive-review" 등.
+description: highfive 백엔드 레포(com.ject.highfive)에서 사용자가 PR을 올리기 전에 자기 변경 사항을 리뷰해 달라고 하거나, 팀원 PR을 리뷰해 달라고 할 때 사용. "리뷰해줘", "PR 전에 봐줘", "3번 PR 리뷰해줘", "/ject-highfive:ject-highfive-review" 등.
 ---
 
 # highfive 개인 리뷰
@@ -14,12 +14,22 @@ description: highfive 백엔드 레포(com.ject.highfive)에서 사용자가 PR�
 - 인자가 없으면: 현재 브랜치와 `develop`의 merge-base부터 지금까지 (커밋 안 된 변경 포함)
 - 인자로 PR 번호나 브랜치가 오면 그것
 
+PR 번호나 다른 브랜치가 대상이면 기계 검사가 그 코드에서 돌도록 먼저 체크아웃한다.
+
+1. `git status`로 작업 트리가 깨끗한지 확인한다. 커밋 안 된 변경이 있으면 멈추고 사용자에게 묻는다.
+2. 지금 브랜치를 기억해 두고 `gh pr checkout {번호}` (브랜치면 `git checkout {브랜치}`)
+3. 리뷰가 끝나면 기억해 둔 브랜치로 돌아간다
+
+PR 작성자(`gh pr view {번호} --json author`)가 사용자(`git config user.name`)가 아니면 **팀원 PR**이다.
+팀원 PR은 출력 마지막의 질문만 다르다.
+
 ## 절차
 
 1. **기계 검사.** `./gradlew spotlessCheck checkstyleMain checkstyleTest test` (Windows PowerShell은
    `.\gradlew.bat`). 실패한 항목은 `[필수]`로 올린다. 이 명령이 잡는 포맷·네이밍·import 순서는 5단계에서 다시 보지 않는다.
 2. **버그 리뷰.** Skill 도구로 `code-review`를 같은 대상으로 호출한다. 사용자가 수준(low~xhigh)을 말했으면
-   그대로, 아니면 `medium`. 결과는 따로 보고하지 않고 마지막 목록에 합친다.
+   그대로, 아니면 `medium`. 결과는 따로 보고하지 않고 마지막 목록에 합친다. `code-review`가 주는 줄 번호는
+   diff 출력 기준일 수 있으므로 목록에 넣기 전에 `grep -n` 등으로 소스 파일의 줄 번호를 확인해 맞춘다.
 3. **기능 특정.** 브랜치 이름(`feature/JECT-번호-기능`)·커밋 메시지·바뀐 코드로 `docs/기능명세서-v4.md`의
    `### #번호` 섹션을 찾는다. 특정할 수 없으면 사용자에게 묻는다.
 4. **기획서 대조.** 아래 문서를 필요한 만큼 읽고 확인한다.
@@ -91,4 +101,8 @@ description: highfive 백엔드 레포(com.ject.highfive)에서 사용자가 PR�
 근거는 `버그`, `기능명세서 #12`, `규칙: DTO`처럼 어디서 나온 항목인지 적는다. 같은 문제가 여러 단계에서
 나오면 한 줄로 합치고 근거를 함께 적는다. 항목이 없으면 `없음`.
 
-마지막에 "어느 항목을 고칠까요?"라고 묻고 멈춘다.
+마지막 질문은 대상에 따라 다르다.
+
+- 내 변경: "어느 항목을 고칠까요?"라고 묻고 멈춘다.
+- 팀원 PR: 팀원 코드는 고치지 않는다. "PR 코멘트로 남길 항목이 있을까요?"라고 묻고 멈춘다. 코멘트는
+  사용자의 GitHub 계정으로 게시되므로, 남기기로 하면 문구를 먼저 보여 주고 확인을 받은 뒤에 올린다.
