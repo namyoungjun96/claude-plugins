@@ -39,7 +39,7 @@ PR 작성자(`gh pr view {번호} --json author`)가 사용자(`git config user.
    |---|---|
    | `docs/기능명세서-v4.md` 해당 섹션 | 항상 |
    | `docs/api/API명세서-v0.1.md` | 컨트롤러나 Request/Response DTO가 바뀌었을 때 |
-   | `docs/ERD/erd-review_v4.md` 5장, `docs/ERD/fisrt_highfive_ERD_v6.sql` | 엔티티가 바뀌었을 때. 5장의 UNIQUE/FK/AUTO_INCREMENT 제약 반영 여부 |
+   | `docs/fisrt_highfive_ERD.sql` (최신본), `docs/ERD/erd-review_v4.md` 5장 | 엔티티가 바뀌었을 때. 컬럼·테이블 이름과 5장의 UNIQUE/FK/AUTO_INCREMENT 제약 반영 여부. `docs/ERD/*_v{번호}.sql`은 지난 버전 기록이라 기준으로 쓰지 않는다 |
    | `docs/의사결정.md` | 명세와 코드가 다를 때. 결정(`D번호`)으로 바뀐 것이면 지적하지 않는다 |
 
    `docs/협의할-점.md`와 컨벤션 리뷰 문서의 "미정" 항목은 기준으로 쓰지 않는다. 미정인 것을 코드가 임의로
